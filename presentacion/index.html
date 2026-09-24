@@ -1,0 +1,317 @@
+<!doctype html>
+<!-- Recurso de presentación · Web CIVUTEC · versión del sitio v3.1 (sitio de revisión) · GPS Informática -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Web CIVUTEC — Qué se ha hecho y cómo funciona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marino:#000000; --marino-2:#0a0a0a; --marino-3:#111111;
+    --tinta:#FFFFFF; --tinta-2:#A8A8A8; --linea:#222222;
+    --fondo:#000000; --papel:#0a0a0a; --claro:#111111;
+    --carmin:#bc234b; --terracota:#d37158; --acento:#d37158;
+    --grad:linear-gradient(90deg,#bc234b,#d37158);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 Poppins,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+  a{color:var(--acento)}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.15;margin:0}
+  h1{font-size:clamp(30px,5vw,52px);font-weight:700}
+  h2{font-size:clamp(24px,3.2vw,34px);font-weight:600;margin-bottom:8px}
+  h3{font-size:19px;font-weight:700;margin:22px 0 6px}
+  p{margin:8px 0}
+  .over{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* portada */
+  .portada{background:#000;color:#fff;padding:88px 0 64px;position:relative;overflow:hidden;border-bottom:2px solid transparent;border-image:var(--grad) 1}
+  .portada .logos{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+  .portada .logos img{height:34px;width:auto}
+  .portada .logos .sep{width:1px;height:28px;background:#333}
+  .portada .logos .cliente{font-weight:600;letter-spacing:.12em;font-size:14px;color:#fff}
+  .portada p{color:#A8A8A8;max-width:720px;font-size:18px}
+  .portada .malla{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(120deg,transparent 48%,#fff 49%,#fff 50%,transparent 51%),linear-gradient(60deg,transparent 48%,#fff 49%,#fff 50%,transparent 51%);background-size:140px 140px;pointer-events:none}
+  .portada .meta{display:flex;flex-wrap:wrap;gap:24px;margin-top:28px;font-size:14px;color:#A8A8A8}
+  .portada .meta b{display:block;color:#fff}
+  .portada a{color:#d37158}
+
+  /* índice pegajoso */
+  .indice{position:sticky;top:0;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);z-index:10}
+  .indice ul{list-style:none;margin:0;padding:10px 20px;display:flex;gap:6px;overflow-x:auto;max-width:1100px;margin:0 auto}
+  .indice a{white-space:nowrap;text-decoration:none;color:var(--tinta-2);font-size:14px;padding:6px 12px;border-radius:999px}
+  .indice a:hover{background:#111;color:#fff}
+
+  section{padding:56px 0 24px;scroll-margin-top:64px}
+  section+section{border-top:1px solid var(--linea)}
+
+  .grid{display:grid;gap:14px}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .caja{background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:18px 20px;transition:transform 200ms cubic-bezier(.22,1,.36,1),border-color 200ms}
+  .caja:hover{transform:translateY(-4px);border-color:#333}
+  .caja .n{font-size:34px;font-weight:700;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+  .caja .t{font-size:12px;color:var(--tinta-2);margin-top:6px;text-transform:uppercase;letter-spacing:.16em}
+
+  .version{background:var(--papel);border:1px solid var(--linea);border-radius:16px;padding:22px 24px;margin:18px 0}
+  .version .etiqueta{display:inline-block;background:var(--grad);color:#fff;font-weight:600;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:8px}
+  .version .origen{color:var(--tinta-2);font-size:14px;margin-bottom:8px}
+  .version ul{margin:8px 0 0 18px;padding:0}
+  .version li{margin:6px 0}
+  .porque{border-left:3px solid var(--terracota);padding:8px 14px;background:var(--claro);border-radius:0 10px 10px 0;margin-top:12px;font-size:15px}
+
+  figure{margin:14px 0;background:var(--papel);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+  figure a{display:block}
+  figure img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform 240ms cubic-bezier(.22,1,.36,1)}
+  figure:hover img{transform:scale(1.015)}
+  figcaption{padding:10px 14px;font-size:14px;color:var(--tinta-2)}
+
+  table{width:100%;border-collapse:collapse;background:var(--papel);border:1px solid var(--linea);border-radius:12px;overflow:hidden;font-size:15px}
+  th,td{text-align:left;padding:11px 14px;vertical-align:top;border-top:1px solid var(--linea)}
+  th{background:var(--claro);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-2);border-top:0}
+  .quien{white-space:nowrap;font-weight:700}
+
+  .aviso{background:#160b0e;border:1px solid #4a1f2c;border-radius:12px;padding:12px 16px;margin:14px 0;font-size:15px}
+  .pie{padding:40px 0 60px;color:var(--tinta-2);font-size:13px;border-top:1px solid var(--linea);margin-top:40px}
+  .pie img{height:26px;width:auto;display:block;margin-bottom:12px;opacity:.9}
+
+  @media print{
+    body{background:#fff;color:#111}
+    .portada{background:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .caja,.version,figure,table{border-color:#ccc;background:#fff;color:#111}
+    .caja .n,.over{-webkit-text-fill-color:#bc234b;color:#bc234b;background:none}
+    .indice{display:none}
+    .portada{padding:48px 0}
+    section{padding:28px 0 8px;break-inside:avoid}
+    .version,figure,.caja{break-inside:avoid}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="portada">
+  <div class="malla"></div>
+  <div class="wrap">
+    <div class="logos"><img src="capturas/gps-logo.png" alt="GPS Informática"><span class="sep"></span><span class="cliente">CIVUTEC</span></div>
+    <div class="over">GPS Informática · para Civutec SpA</div>
+    <h1>Web CIVUTEC<br>Qué se ha hecho y cómo funciona</h1>
+    <p>Documento de apoyo para la reunión de revisión. Recorre lo que existe hoy gracias al proyecto, versión por versión, y cómo funciona el sitio para quien lo va a ver por primera vez.</p>
+    <div class="meta">
+      <div><b>Para</b> Ernesto Villagra · CIVUTEC</div>
+      <div><b>Sitio de revisión</b> <a href="https://gps-informatica.github.io/web-civutec/" target="_blank" rel="noopener">gps-informatica.github.io/web-civutec</a></div>
+      <div><b>Versión del sitio</b> v3.1</div>
+    </div>
+  </div>
+</header>
+
+<nav class="indice"><ul>
+  <li><a href="#hoy">Lo que existe hoy</a></li>
+  <li><a href="#versiones">Las versiones</a></li>
+  <li><a href="#recorrido">Cómo funciona</a></li>
+  <li><a href="#seguridad">Seguridad</a></li>
+  <li><a href="#falta">Lo que falta</a></li>
+  <li><a href="#sigue">Cómo seguir</a></li>
+</ul></nav>
+
+<main class="wrap">
+
+<section id="hoy">
+  <div class="over">Resumen</div>
+  <h2>Lo que existe hoy gracias al proyecto</h2>
+  <p>Antes de entrar en el detalle, esto es lo que CIVUTEC tiene ya construido, publicado y probado.</p>
+  <div class="grid g3" style="margin-top:18px">
+    <div class="caja"><div class="n">6</div><div class="t">rutas del sitio</div><p>Inicio, Nosotros, Servicios, Alianzas, Por qué CIVUTEC y Contacto, más una página propia para cuando alguien escribe mal una dirección.</p></div>
+    <div class="caja"><div class="n">5</div><div class="t">páginas de marca</div><p>Seceon, Microsoft, SearchInform, K7 y Seqrite, cada una con sus productos y su ficha para descargar.</p></div>
+    <div class="caja"><div class="n">5</div><div class="t">fichas co-brandeadas</div><p>Material comercial en PDF con la identidad de CIVUTEC y de cada fabricante, listo para que un prospecto se lo lleve.</p></div>
+    <div class="caja"><div class="n">12</div><div class="t">servicios detallados</div><p>Agrupados en tres frentes, cada uno con su explicación desplegable y su dirección propia para compartir.</p></div>
+    <div class="caja"><div class="n">2</div><div class="t">leyes explicadas</div><p>La sección de normativa chilena: protección de datos y marco de ciberseguridad, con lo que CIVUTEC puede hacer por cada una.</p></div>
+    <div class="caja"><div class="n">185</div><div class="t">comprobaciones antes de publicar</div><p>El sitio se recorrió completo en tres tamaños de pantalla antes de publicar y otra vez ya publicado. Todas correctas.</p></div>
+  </div>
+  <p style="margin-top:16px">Y lo que no se ve pero también está hecho: la identidad del brochure aprobado aplicada a todo el sitio, una revisión de seguridad sin hallazgos críticos, el peso de cada página bajo control para que cargue rápido, y comportamiento cuidado en celular, que es donde más se va a ver.</p>
+</section>
+
+<section id="versiones">
+  <div class="over">Historial</div>
+  <h2>Las versiones del sitio</h2>
+  <p>Cada versión se construyó sobre la anterior. Lo que está aquí está aplicado y visible en el enlace de revisión.</p>
+
+  <div class="version">
+    <span class="etiqueta">v1.0 · El sitio</span>
+    <div class="origen">Construcción inicial a partir del brochure empresarial aprobado.</div>
+    <ul>
+      <li>Sitio de cinco páginas —Inicio, Nosotros, Servicios, Alianzas y Contacto— con navegación fija y pie.</li>
+      <li>Portada a pantalla completa, bloque "Quiénes somos", servicios destacados y presentación de alianzas.</li>
+      <li>Nosotros con historia, misión, visión, filosofía, compromiso y los seis valores en una fila que se arrastra.</li>
+      <li>Los doce servicios del brochure, agrupados en tres frentes, con tarjetas que se despliegan.</li>
+      <li>Alianzas con GPS destacada y las cinco marcas del portafolio, más la fila de plataformas.</li>
+      <li>Contacto con formulario, correo, teléfono y el globo de WhatsApp presente en todas las páginas.</li>
+      <li>Identidad del brochure en todo: azul marino, tipografía MADE Outer Sans, malla poligonal, fotografía en duotono.</li>
+    </ul>
+    <div class="porque"><b>Criterio de diseño.</b> Aire, jerarquía clara y movimiento suave que nunca hace saltar el contenido. Tarjetas opacas, la malla solo en fondos, y respeto por la preferencia de "movimiento reducido" del sistema.</div>
+  </div>
+
+  <div class="version">
+    <span class="etiqueta">v1.1 · Dirección de arte</span>
+    <div class="origen">Revisión interna de la agencia antes de pedir comentarios al cliente.</div>
+    <ul>
+      <li>La malla de fondo dejó de competir con el texto: trazo más definido y fuera del interior de los recuadros.</li>
+      <li>Íconos de servicios limpios, logos de marca sobre recuadro blanco sin veladuras, valores con mejor contorno y texto más legible.</li>
+      <li>Se quitó el marco que atravesaba varios elementos en la portada.</li>
+    </ul>
+    <div class="porque"><b>Regla que se aplicó.</b> Cuando una iteración se alejaba del brochure aprobado, se descartaba. El brochure manda; el sitio no reinterpreta la marca.</div>
+  </div>
+
+  <div class="version">
+    <span class="etiqueta">v2.0 · Primera corrección</span>
+    <div class="origen">Tras los primeros comentarios de Ernesto Villagra sobre la versión publicada.</div>
+    <ul>
+      <li><b>Cada marca tiene su propia página.</b> Desde Alianzas se entra a Seceon, Microsoft, SearchInform, K7 o Seqrite y se ve su portada, sus productos uno a uno y su cierre. Antes todo vivía apretado en una sola página.</li>
+      <li><b>Fichas descargables.</b> Cada marca tiene el botón de descarga de su ficha co-brandeada en PDF. Las cinco quedaron incorporadas al sitio y la descarga, que antes fallaba, funciona.</li>
+      <li><b>Logos integrados a la fotografía</b>, sin la placa blanca que los separaba de la imagen.</li>
+      <li><b>Rótulo de la alianza GPS rediseñado</b>, con versiones para fondo claro y oscuro.</li>
+      <li><b>Plataformas con logo real</b> —VMware, Microsoft, HP, Veeam, QNAP— e incorporación de Ubiquiti.</li>
+      <li><b>Banda de clientes</b> en Inicio, con marcadores por sector a la espera de la lista que CIVUTEC autorice.</li>
+      <li><b>Página propia de error.</b> Si alguien escribe mal una dirección, ve una página del sitio que le explica qué pasó y lo devuelve al inicio.</li>
+      <li>Botones homologados, transición más suave entre páginas y textos justificados donde correspondía.</li>
+    </ul>
+  </div>
+
+  <div class="version">
+    <span class="etiqueta">v3.0 · Los 19 puntos de Ernesto</span>
+    <div class="origen">Los 19 puntos enviados por WhatsApp, revisados con un especialista en marketing y SEO. Dieciséis de texto y tres de estructura. Todos aplicados.</div>
+    <h3>Textos</h3>
+    <ul>
+      <li>Lema del sitio: "Tu partner estratégico en ciberseguridad y soluciones TI", en portada, pie, título de la ventana y descripción para buscadores.</li>
+      <li>Trío de valores: "Experiencia · Cercanía · Confianza" en todo el sitio.</li>
+      <li>Historia con el titular "Tecnología, experiencia y cercanía desde 2016" y sus tres párrafos; el Inicio toma el primero para que las dos páginas cuenten lo mismo.</li>
+      <li>Misión, visión, filosofía y compromiso con los textos nuevos.</li>
+      <li>Los seis valores renovados: Confianza, Excelencia, Cercanía, Agilidad, Compromiso y Evolución, cada uno con su texto e ícono.</li>
+      <li>"Beneficios" pasa a "Por qué elegirnos", con los ocho puntos numerados.</li>
+      <li>Contacto con la cabecera nueva y sin la frase incongruente; canales renombrados y la promesa de soporte ajustada a "Opciones de soporte 7×24 según servicio contratado".</li>
+      <li>Pie corregido: "© 2026 Civutec SpA — Chile. Todos los derechos reservados."</li>
+    </ul>
+    <h3>Estructura</h3>
+    <ul>
+      <li><b>Página nueva "Por qué CIVUTEC".</b> Entra al menú en el lugar de Contacto. Arriba, las cinco razones con la cifra "+10 años" animada; abajo, los ocho beneficios numerados. Contacto sigue accesible desde el botón azul, el pie y el cierre de cada página.</li>
+      <li><b>Sección de normativa chilena en el Inicio.</b> Ley 21.719 de protección de datos personales y Ley 21.663 Marco de Ciberseguridad, cada una con enlace al texto oficial, y "Cómo ayuda CIVUTEC" en cuatro frentes: protección, monitoreo, visibilidad y respuesta. Se llega desde el pie y desde el frente 02 de Servicios.</li>
+      <li><b>Botón principal "Solicitar una evaluación"</b> en los siete llamados a la acción principales. Todos llevan a Contacto.</li>
+    </ul>
+    <div class="porque">
+      <b>Tres decisiones que conviene explicar en la reunión.</b><br>
+      La normativa es una sección del Inicio y no una página aparte: la ve todo el que entra, sin depender de un clic en el menú.<br>
+      La sección no cita montos de multas: las sanciones dependen del caso y de los agravantes; una cifra suelta envejece mal y expone a CIVUTEC a una discusión que no le corresponde. Cada ley enlaza a su fuente oficial.<br>
+      Los ocho beneficios se mudaron a "Por qué CIVUTEC" en vez de duplicarse: cinco razones como resumen, ocho beneficios como desarrollo, en una sola página que sostiene el argumento completo.
+    </div>
+  </div>
+
+  <div class="version">
+    <span class="etiqueta">v3.1 · Seguridad, rendimiento y verificación</span>
+    <div class="origen">Trabajo que no se ve en pantalla y que protege lo anterior.</div>
+    <ul>
+      <li><b>Revisión de seguridad</b> del sitio completo: sin hallazgos críticos ni altos. Al servidor público solo va la versión compilada, nunca el código fuente ni documentos internos.</li>
+      <li><b>Peso bajo control.</b> El sitio se mantuvo dentro del tope acordado, y el logo de la alianza pasó de 167 a 74 kB: 93 kB menos en cada página que se abre.</li>
+      <li><b>118 comprobaciones antes de publicar</b>, recorriendo el sitio en escritorio, tablet y celular: navegación por teclado, movimiento reducido, menú móvil y página de error.</li>
+      <li><b>67 comprobaciones ya publicado</b>, contra el sitio real: las seis rutas por acceso directo y por recarga, los textos nuevos, los datos que leen los buscadores, la descarga de una ficha y la página de error.</li>
+      <li><b>Verificación archivo por archivo</b> de que lo publicado es exactamente lo que se probó.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="recorrido">
+  <div class="over">Recorrido</div>
+  <h2>Cómo funciona el sitio</h2>
+  <p>Seis rutas y una página de error. La barra superior se mantiene fija, se vuelve translúcida al bajar, y el botón azul de la derecha —"Solicitar una evaluación"— lleva siempre a Contacto. El globo de WhatsApp acompaña en todas las páginas.</p>
+
+  <h3>1 · Inicio</h3>
+  <figure><a href="capturas/inicio.png" target="_blank"><img src="capturas/inicio.png" alt="Inicio del sitio CIVUTEC"></a><figcaption>Portada a pantalla completa con el lema y los dos botones. Debajo: Quiénes somos, Portafolio, Alianzas, Normativa chilena, Confían en nosotros y el cierre azul.</figcaption></figure>
+  <p><b>Qué mostrar en la reunión:</b> la sección de normativa. Es el contenido nuevo más visible y el que más conversación abre.</p>
+
+  <h3>2 · Nosotros</h3>
+  <figure><a href="capturas/nosotros.png" target="_blank"><img src="capturas/nosotros.png" alt="Página Nosotros"></a><figcaption>Historia, los tres pilares con fotografía, el compromiso en caja azul y los seis valores en una fila que se arrastra con el dedo o el mouse, con inercia al soltar.</figcaption></figure>
+  <p><b>Qué mostrar:</b> arrastrar la fila de valores. Es la pieza que mejor demuestra el nivel de terminación del sitio.</p>
+
+  <h3>3 · Servicios</h3>
+  <figure><a href="capturas/servicios.png" target="_blank"><img src="capturas/servicios.png" alt="Página Servicios"></a><figcaption>Los doce servicios en tres frentes: soporte y atención, seguridad y continuidad, infraestructura y soluciones Microsoft. Cada tarjeta se despliega al hacer clic y tiene dirección propia para compartir.</figcaption></figure>
+  <p><b>Qué mostrar:</b> abrir una tarjeta y seguir el enlace del frente 02 hacia la normativa. Es la costura entre lo comercial y lo regulatorio.</p>
+
+  <h3>4 · Alianzas y páginas de marca</h3>
+  <div class="grid g2">
+    <figure><a href="capturas/alianzas.png" target="_blank"><img src="capturas/alianzas.png" alt="Página Alianzas"></a><figcaption>La alianza GPS destacada, las cinco marcas del portafolio y la fila de plataformas.</figcaption></figure>
+    <figure><a href="capturas/marca-seceon.png" target="_blank"><img src="capturas/marca-seceon.png" alt="Página de marca Seceon"></a><figcaption>Cada marca con portada propia, su logo integrado a la foto, sus capacidades, sus productos y el botón de descarga de su ficha en PDF.</figcaption></figure>
+  </div>
+  <p><b>Qué mostrar:</b> entrar a Seceon y descargar la ficha. Demuestra que el material comercial ya está conectado al sitio.</p>
+
+  <h3>5 · Por qué CIVUTEC</h3>
+  <figure><a href="capturas/por-que-civutec.png" target="_blank"><img src="capturas/por-que-civutec.png" alt="Página Por qué CIVUTEC"></a><figcaption>La página nueva: las cinco razones con la cifra "+10 años" que se anima al entrar en pantalla, y los ocho beneficios numerados.</figcaption></figure>
+  <p><b>Qué mostrar:</b> es la página que responde "¿por qué ustedes?" sin que el visitante tenga que armar el argumento leyendo todo el sitio.</p>
+
+  <h3>6 · Contacto</h3>
+  <p>Cabecera con el texto nuevo, formulario, canales directos —correo y teléfono— y la caja azul con "Experiencia · Cercanía · Confianza".</p>
+  <div class="aviso"><b>Importante para la reunión:</b> el formulario todavía no envía. Falta conectarlo al servicio de correo, que requiere una cuenta a nombre de CIVUTEC. Mientras tanto la página muestra los canales directos. Conviene no hacer clic en "Enviar" delante del cliente hasta que esté conectado.</div>
+
+  <h3>En celular</h3>
+  <p>Todo el sitio se probó en tamaño de teléfono y tablet. El menú se recoge en un botón, la fila de valores se arrastra con el dedo, las tarjetas de servicios se despliegan al tocarlas y el globo de WhatsApp queda al alcance del pulgar.</p>
+
+  <h3>Notas para quien lo enseñe por primera vez</h3>
+  <ul>
+    <li>Se puede entrar directo a cualquier dirección y recargar sin que se rompa: está probado ruta por ruta.</li>
+    <li>El sitio respeta la preferencia de movimiento reducido del sistema: si está activada, las animaciones no se ejecutan y el contenido se ve completo.</li>
+    <li>Es un sitio de revisión: pide a los buscadores que lo ignoren, así nadie llega por Google a una versión en curso. Eso se quita al publicar en civutec.cl.</li>
+    <li>Los seis nombres de "Confían en nosotros" son marcadores por sector, no clientes reales. Esperan la lista que CIVUTEC autorice.</li>
+  </ul>
+</section>
+
+<section id="seguridad">
+  <div class="over">Seguridad</div>
+  <h2>Qué se hizo en materia de seguridad</h2>
+  <p>El sitio pasó por dos revisiones de seguridad completas: una antes de publicarse por primera vez y otra antes de la última versión. Ninguna encontró hallazgos críticos ni altos. Esto es lo que se revisó y lo que se dejó protegido.</p>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="caja"><div class="t">Lo que se publica</div><p><b>Al servidor público solo va la versión compilada del sitio.</b> El código fuente, los documentos internos y el material de trabajo nunca salen del equipo de la agencia. Se comprobó archivo por archivo, en cada publicación, que lo servido es exactamente lo probado.</p></div>
+    <div class="caja"><div class="t">Datos de los visitantes</div><p><b>El sitio no guarda datos de nadie.</b> No tiene base de datos ni registro de usuarios. El formulario de contacto está apagado hasta que exista una cuenta a nombre de CIVUTEC: mientras tanto no se envía nada a ningún tercero y la página muestra los canales directos.</p></div>
+    <div class="caja"><div class="t">Componentes de terceros</div><p><b>Las librerías con las que está construido se auditaron</b> contra la base de vulnerabilidades conocidas, y están en versiones vigentes. Es lo que evita que una pieza ajena con un fallo publicado se cuele en el sitio de CIVUTEC.</p></div>
+    <div class="caja"><div class="t">Enlaces hacia afuera</div><p><b>Todo enlace a un sitio externo</b> —los textos oficiales de las leyes, las marcas, WhatsApp— abre en pestaña nueva y sin pasarle al destino información sobre desde dónde viene el visitante.</p></div>
+    <div class="caja"><div class="t">Sitio de revisión</div><p><b>Mientras es un sitio en revisión, los buscadores lo ignoran.</b> Nadie llega por Google a una versión en curso. Esa marca se retira al publicar en civutec.cl.</p></div>
+    <div class="caja"><div class="t">Método</div><p>Se aplicó la metodología de revisión de seguridad de GPS Informática adaptada a un sitio sin servidor propio, con referencia a los estándares OWASP y NIST. Cada revisión queda documentada con su veredicto, y ninguna publicación sale sin ese visto bueno.</p></div>
+  </div>
+</section>
+
+<section id="falta">
+  <div class="over">Producción</div>
+  <h2>Lo que falta para publicar en civutec.cl</h2>
+  <p>Nada de esto impide seguir revisando el sitio en el enlace actual.</p>
+  <table>
+    <tr><th>Punto</th><th>Qué falta</th><th>De quién depende</th></tr>
+    <tr><td><b>Dominio civutec.cl</b></td><td>Publicar el sitio en el dominio propio. CIVUTEC facilita el acceso al panel del dominio o a su proveedor; la agencia hace la configuración y la publicación.</td><td class="quien">CIVUTEC y la agencia</td></tr>
+    <tr><td><b>Formulario de contacto</b></td><td>Conectarlo al servicio de envío con una cuenta a nombre de CIVUTEC, para que los mensajes lleguen a contacto@civutec.cl.</td><td class="quien">CIVUTEC y la agencia</td></tr>
+    <tr><td><b>Fotografías</b></td><td>Confirmar por escrito el plan de licencia que cubre las fotos de banco usadas.</td><td class="quien">La agencia</td></tr>
+    <tr><td><b>Visibilidad en buscadores</b></td><td>Retirar la marca de "no indexar" al publicar, para que el sitio pueda posicionar.</td><td class="quien">La agencia</td></tr>
+    <tr><td><b>Lista de clientes</b></td><td>Reemplazar los marcadores por sector por los clientes que CIVUTEC autorice nombrar, con su logo.</td><td class="quien">CIVUTEC</td></tr>
+  </table>
+
+  <h3>Mejoras detectadas que se dejaron para una ronda propia</h3>
+  <ul>
+    <li><b>Fotografías en formato moderno.</b> Son el 80 % del peso de cada página; recomprimirlas exige revisar una por una que el duotono no pierda calidad.</li>
+    <li><b>Tipografías en formato web ligero</b>, junto con la sustitución por la licencia comercial.</li>
+    <li><b>Llegada exacta a las secciones</b> cuando se entra por un enlace directo: hoy hay un desvío de unos 25 píxeles la primera vez, casi imperceptible, con causa ya identificada.</li>
+    <li>Comportamiento en Safari y Firefox y revisión de accesibilidad de los textos nuevos, que quedaron fuera de esta ronda.</li>
+  </ul>
+</section>
+
+<section id="sigue">
+  <div class="over">Siguiente paso</div>
+  <h2>Cómo funciona una ronda de cambios</h2>
+  <p>Los comentarios se reciben por el grupo de WhatsApp o por correo, en una sola lista numerada. La agencia los organiza, aplica los cambios sobre el sitio de revisión, los prueba en los tres tamaños de pantalla y vuelve a publicar en el mismo enlace. Cada ronda cierra con un aviso de qué entró y qué quedó fuera, y por qué.</p>
+  <p>Lo que más acelera una ronda: mandar todos los puntos juntos, con la página y la sección a la que se refiere cada uno.</p>
+</section>
+
+</main>
+
+<footer class="pie"><div class="wrap"><img src="capturas/gps-logo.png" alt="GPS Informática">GPS Informática · Grupo Propulsor de Soluciones, S.A. de C.V. · Documento de apoyo para la revisión del sitio de CIVUTEC. Las capturas corresponden al sitio de revisión en su versión v3.1.</div></footer>
+
+</body>
+</html>
