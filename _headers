@@ -1,0 +1,12 @@
+# Cabeceras de producción (Cloudflare Pages, civutec.cl). Vite copia este
+# archivo a la raíz del build; GitHub Pages (staging) lo ignora.
+# La CSP cubre exactamente lo que la web carga: código, estilos, fuentes e
+# imágenes propios; Formspree solo para el envío del formulario de contacto.
+# Los enlaces a otros sitios (wa.me, geztion.com, bcn.cl, cotizador) son
+# navegación y no necesitan directiva.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests

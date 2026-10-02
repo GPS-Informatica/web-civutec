@@ -9,12 +9,34 @@
       content="CIVUTEC — Tu partner estratégico en ciberseguridad y soluciones TI. Opciones de soporte 7×24, infraestructura y soluciones Microsoft para empresas en Chile."
     />
     <meta name="theme-color" content="#12253a" />
-    <!-- Staging en GitHub Pages dirigido al cliente: QUITAR este noindex
-         al publicar en producción (civutec.cl). -->
+    <!-- Fuentes de display precargadas: la regular (h1/h2) y la alt-thin
+         (lema del hero y rótulos). Ambas están por encima de las anclas y,
+         sin precarga, la llegada directa a /#normativa daba dos saltos al
+         cambiar la fuente. Mismas URL que los @font-face de src/index.css;
+         Vite les antepone la base al compilar (como al favicon).
+         crossorigin es obligatorio para precargar fuentes. -->
+    <link
+      rel="preload"
+      href="/web-civutec/assets/fonts/made-outer-sans-regular.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/web-civutec/assets/fonts/made-outer-sans-alt-thin.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <!-- Staging en GitHub Pages dirigido al cliente. Este archivo la
+         conserva: el plugin produccionCivutec (vite.config.js) quita este
+         comentario y la meta solo en el build de producción
+         (npm run build:prod, civutec.cl). -->
     <meta name="robots" content="noindex,nofollow" />
     <title>CIVUTEC — Tu partner estratégico en ciberseguridad y soluciones TI</title>
-    <script type="module" crossorigin src="/web-civutec/assets/index-B-EQfMKy.js"></script>
-    <link rel="stylesheet" crossorigin href="/web-civutec/assets/index-C_Bu19Bt.css">
+    <script type="module" crossorigin src="/web-civutec/assets/index-Bq-OlZyi.js"></script>
+    <link rel="stylesheet" crossorigin href="/web-civutec/assets/index-DZlP_6Rf.css">
   </head>
   <body>
     <div id="root"></div>
